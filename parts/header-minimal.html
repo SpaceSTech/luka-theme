@@ -1,0 +1,31 @@
+<!-- Minimal header — used on landing pages, checkout, and campaign pages.
+     No navigation, no search. Just logo + a single back-link.
+     Reduces cognitive load and removes exit paths during conversion flows. -->
+
+<!-- wp:html -->
+<a class="luka-skip-link" href="#main-content">Skip to main content</a>
+<!-- /wp:html -->
+
+<!-- wp:group {"className":"site-header site-header--minimal","style":{"border":{"bottom":{"color":"var:preset|color|border","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|4","right":"var:preset|spacing|6","bottom":"var:preset|spacing|4","left":"var:preset|spacing|6"}}},"backgroundColor":"base","layout":{"type":"constrained","wideSize":"1280px"}} -->
+<div class="wp-block-group site-header site-header--minimal has-base-background-color has-background" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-style:solid;border-bottom-width:1px;padding-top:var(--wp--preset--spacing--4);padding-right:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--4);padding-left:var(--wp--preset--spacing--6)">
+
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group">
+
+		<!-- wp:site-logo {"width":140,"shouldSyncIcon":false,"isLink":true} /-->
+
+		<!-- wp:button {"className":"is-style-luka-ghost","textColor":"contrast-3","fontSize":"xs","style":{"border":{"radius":"0"},"spacing":{"padding":{"top":"0.5rem","right":"0","bottom":"0.5rem","left":"0"}}}} -->
+		<div class="wp-block-button has-custom-font-size is-style-luka-ghost">
+			<a class="wp-block-button__link has-contrast-3-color has-text-color wp-element-button"
+			   href="/"
+			   style="border-radius:0;padding-top:0.5rem;padding-right:0;padding-bottom:0.5rem;padding-left:0">
+				← Back to site
+			</a>
+		</div>
+		<!-- /wp:button -->
+
+	</div>
+	<!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->

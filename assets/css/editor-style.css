@@ -1,0 +1,49 @@
+/*
+ * Luka Agency — Block Editor Styles
+ *
+ * Applies inside the Gutenberg iframe only.
+ * Registered via add_editor_style() in inc/setup.php.
+ * Do NOT add front-end styles here.
+ */
+
+/* Constrain editing canvas to match front-end max-width */
+.editor-styles-wrapper {
+	font-family: var(--wp--preset--font-family--sans);
+	max-width: 100%;
+}
+
+/* Match body padding to theme.json useRootPaddingAwareAlignments */
+.editor-styles-wrapper .is-root-container {
+	padding-inline: var(--wp--preset--spacing--6);
+}
+
+/* Full-width blocks bleed edge-to-edge in editor too */
+.editor-styles-wrapper .alignfull {
+	max-width: none;
+	width: calc(100% + (2 * var(--wp--preset--spacing--6)));
+	margin-inline: calc(-1 * var(--wp--preset--spacing--6));
+}
+
+/* Wide blocks match wideSize token */
+.editor-styles-wrapper .alignwide {
+	max-width: var(--wp--style--global--wide-size);
+}
+
+/* Eyebrow heading style preview */
+.editor-styles-wrapper .wp-block-heading.is-style-luka-eyebrow {
+	color: var(--wp--preset--color--accent);
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--xs);
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+/* Display heading style preview */
+.editor-styles-wrapper .wp-block-heading.is-style-luka-display {
+	font-family: var(--wp--preset--font-family--serif);
+	font-size: var(--wp--preset--font-size--5xl);
+	font-weight: 300;
+	letter-spacing: -0.03em;
+	line-height: 1.02;
+}

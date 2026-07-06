@@ -1,0 +1,61 @@
+<!-- 404.html — Not Found template.
+     Minimal, branded, and helpful: large display number, clear message,
+     search form, and a link back to the homepage. No external dependencies. -->
+
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"main-content","style":{"spacing":{"padding":{"top":"var:preset|spacing|32","bottom":"var:preset|spacing|32"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" id="main-content" style="padding-top:var(--wp--preset--spacing--32);padding-bottom:var(--wp--preset--spacing--32)">
+
+	<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|6"}},"layout":{"type":"constrained","contentSize":"600px"}} -->
+	<div class="wp-block-group">
+
+		<!-- Large 404 display numeral -->
+		<!-- wp:heading {"level":1,"textColor":"accent","style":{"typography":{"lineHeight":"1","letterSpacing":"-0.04em","fontWeight":"300"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|4"}}},"fontSize":"5xl","className":"is-style-luka-display"} -->
+		<h1 class="wp-block-heading has-accent-color has-text-color has-5-xl-font-size is-style-luka-display" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--4);line-height:1;letter-spacing:-0.04em;font-weight:300">404</h1>
+		<!-- /wp:heading -->
+
+		<!-- wp:heading {"level":2,"fontSize":"2xl","style":{"typography":{"lineHeight":"1.2"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|5"}}}} -->
+		<h2 class="wp-block-heading has-2-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--5);line-height:1.2">Page not found</h2>
+		<!-- /wp:heading -->
+
+		<!-- wp:paragraph {"textColor":"contrast-3","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|10"}}}} -->
+		<p class="has-contrast-3-color has-text-color" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--10)">The page you're looking for doesn't exist or has been moved. Try searching, or head back home.</p>
+		<!-- /wp:paragraph -->
+
+		<!-- Search form -->
+		<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search the site…","buttonText":"Search","buttonPosition":"button-outside","style":{"border":{"radius":"0","width":"1px","color":"var:preset|color|border"}},"fontSize":"sm"} /-->
+
+		<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|8"},"blockGap":"var:preset|spacing|4"}}} -->
+		<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--8)">
+
+			<!-- wp:button {"backgroundColor":"primary","textColor":"white","fontSize":"xs","style":{"border":{"radius":"0"},"spacing":{"padding":{"top":"0.875rem","right":"2rem","bottom":"0.875rem","left":"2rem"}}}} -->
+			<div class="wp-block-button has-custom-font-size">
+				<a class="wp-block-button__link has-primary-background-color has-white-color has-text-color has-background wp-element-button"
+				   href="/"
+				   style="border-radius:0;padding-top:0.875rem;padding-right:2rem;padding-bottom:0.875rem;padding-left:2rem">
+					← Back to Home
+				</a>
+			</div>
+			<!-- /wp:button -->
+
+			<!-- wp:button {"className":"is-style-luka-outlined","textColor":"primary","fontSize":"xs","style":{"border":{"radius":"0","width":"1px","color":"var:preset|color|primary"},"spacing":{"padding":{"top":"0.875rem","right":"2rem","bottom":"0.875rem","left":"2rem"}}}} -->
+			<div class="wp-block-button has-custom-font-size is-style-luka-outlined">
+				<a class="wp-block-button__link has-primary-color has-text-color wp-element-button"
+				   href="/work"
+				   style="border-radius:0;border-color:var(--wp--preset--color--primary);border-style:solid;border-width:1px;padding-top:0.875rem;padding-right:2rem;padding-bottom:0.875rem;padding-left:2rem">
+					View Our Work
+				</a>
+			</div>
+			<!-- /wp:button -->
+
+		</div>
+		<!-- /wp:buttons -->
+
+	</div>
+	<!-- /wp:group -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

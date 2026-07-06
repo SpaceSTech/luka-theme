@@ -1,0 +1,76 @@
+<!-- Skip link — first focusable element on every page (WCAG 2.4.1).
+     Visually hidden until keyboard focus; styled in assets/css/theme.css. -->
+<!-- wp:html -->
+<a class="luka-skip-link" href="#main-content">Skip to main content</a>
+<!-- /wp:html -->
+
+<!-- Sticky header wrapper.
+     position:sticky + top:0px is set via the block's style attribute so the
+     Site Editor can surface and edit it. z-index and backdrop-filter are in
+     theme.css because the block editor cannot express them.
+     backgroundColor="base" uses the semantic token so dark-mode works. -->
+<!-- wp:group {"className":"site-header","style":{"position":{"type":"sticky","top":"0px"},"border":{"bottom":{"color":"var:preset|color|border","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|4","right":"var:preset|spacing|6","bottom":"var:preset|spacing|4","left":"var:preset|spacing|6"}}},"backgroundColor":"base","layout":{"type":"constrained","wideSize":"1280px"}} -->
+<div class="wp-block-group site-header has-base-background-color has-background" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-style:solid;border-bottom-width:1px;padding-top:var(--wp--preset--spacing--4);padding-right:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--4);padding-left:var(--wp--preset--spacing--6)">
+
+	<!-- Inner row: logo | nav | actions — flex, no-wrap, space-between -->
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group">
+
+		<!-- Site logo.
+		     shouldSyncIcon syncs the browser tab favicon to the logo.
+		     Width is controlled here; height scales proportionally. -->
+		<!-- wp:site-logo {"width":140,"shouldSyncIcon":true,"isLink":true} /-->
+
+		<!-- Primary navigation.
+		     overlayMenu="mobile" shows a hamburger at ≤782 px — handled by the
+		     core/navigation viewScript (WordPress core JS, unavoidable).
+		     ariaLabel becomes aria-label="Primary navigation" on the <nav> element.
+		     overlayBackgroundColor / overlayTextColor style the mobile overlay panel.
+		     Inner nav-link blocks are placeholder items — replace or sync to a
+		     saved Navigation post via the Site Editor. -->
+		<!-- wp:navigation {"className":"primary-navigation","ariaLabel":"Primary navigation","overlayMenu":"mobile","overlayBackgroundColor":"base","overlayTextColor":"contrast","style":{"spacing":{"blockGap":"var:preset|spacing|8"}},"layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap"}} -->
+			<!-- wp:navigation-link {"label":"Services","url":"#services","kind":"custom","isTopLevelLink":true} /-->
+			<!-- wp:navigation-submenu {"label":"Work","url":"/work","kind":"custom"} -->
+				<!-- wp:navigation-link {"label":"Case Studies","url":"/work","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"Testimonials","url":"#testimonials","kind":"custom"} /-->
+			<!-- /wp:navigation-submenu -->
+			<!-- wp:navigation-link {"label":"About","url":"#about","kind":"custom","isTopLevelLink":true} /-->
+			<!-- wp:navigation-link {"label":"Blog","url":"/blog","kind":"custom","isTopLevelLink":true} /-->
+		<!-- /wp:navigation -->
+
+		<!-- Action group: search icon + CTA button.
+		     Hidden on mobile (≤782 px) via theme.css — the nav overlay takes over. -->
+		<!-- wp:group {"className":"header-actions","style":{"spacing":{"blockGap":"var:preset|spacing|3"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"right"}} -->
+		<div class="wp-block-group header-actions">
+
+			<!-- Search block.
+			     showLabel=false hides the visible label but keeps it in DOM for
+			     screen readers (accessible hidden label pattern).
+			     buttonUseIcon=true renders a magnifying-glass SVG.
+			     buttonPosition="button-inside" places the icon within the input wrapper.
+			     The input expands from width:0 to 180px on :focus-within — pure CSS,
+			     no JavaScript. See .header-search styles in theme.css. -->
+			<!-- wp:search {"className":"header-search","label":"Search","showLabel":false,"placeholder":"Search…","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"radius":"0","width":"1px","color":"var:preset|color|border"}}} /-->
+
+			<!-- CTA button.
+			     href points to the contact section/page — update as needed.
+			     Square border-radius (0) is the brand's architectural style.
+			     Typography (uppercase, tracking) inherits from theme.json elements.button. -->
+			<!-- wp:button {"className":"is-style-fill header-cta","backgroundColor":"primary","textColor":"white","fontSize":"xs","style":{"border":{"radius":"0"},"spacing":{"padding":{"top":"0.75rem","right":"1.5rem","bottom":"0.75rem","left":"1.5rem"}}}} -->
+			<div class="wp-block-button has-custom-font-size is-style-fill header-cta">
+				<a class="wp-block-button__link has-primary-background-color has-white-color has-text-color has-background wp-element-button"
+				   href="#contact"
+				   style="border-radius:0;padding-top:0.75rem;padding-right:1.5rem;padding-bottom:0.75rem;padding-left:1.5rem">
+					Get In Touch
+				</a>
+			</div>
+			<!-- /wp:button -->
+
+		</div>
+		<!-- /wp:group -->
+
+	</div>
+	<!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->

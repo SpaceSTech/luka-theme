@@ -1,0 +1,57 @@
+<!-- woo/single-product.html — WooCommerce single product template.
+     Uses WooCommerce's native block-based product template.
+     Requires WooCommerce 8.0+ with block templates enabled. -->
+
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"main-content","style":{"spacing":{"padding":{"top":"var:preset|spacing|16","bottom":"var:preset|spacing|24"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" id="main-content" style="padding-top:var(--wp--preset--spacing--16);padding-bottom:var(--wp--preset--spacing--24)">
+
+	<!-- WooCommerce store notices (errors, success messages) -->
+	<!-- wp:woocommerce/store-notices /-->
+
+	<!-- Product: image + details side-by-side -->
+	<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|16"}}}} -->
+	<div class="wp-block-columns">
+
+		<!-- Product gallery column -->
+		<!-- wp:column {"width":"55%"} -->
+		<div class="wp-block-column" style="flex-basis:55%">
+			<!-- wp:woocommerce/product-image-gallery /-->
+		</div>
+		<!-- /wp:column -->
+
+		<!-- Product details column -->
+		<!-- wp:column {"width":"45%"} -->
+		<div class="wp-block-column" style="flex-basis:45%">
+
+			<!-- wp:woocommerce/breadcrumbs {"fontSize":"xs","textColor":"contrast-3"} /-->
+
+			<!-- wp:post-title {"fontSize":"3xl","style":{"typography":{"lineHeight":"1.15"},"spacing":{"margin":{"top":"var:preset|spacing|3","bottom":"var:preset|spacing|4"}}}} /-->
+
+			<!-- wp:woocommerce/product-rating {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|4"}}}} /-->
+
+			<!-- wp:woocommerce/product-price {"fontSize":"xl","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|6"}}}} /-->
+
+			<!-- wp:woocommerce/product-summary {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|8"}}}} /-->
+
+			<!-- wp:woocommerce/add-to-cart-with-options /-->
+
+			<!-- wp:woocommerce/product-meta {"style":{"spacing":{"margin":{"top":"var:preset|spacing|8"}},"typography":{"fontSize":"var:preset|font-size|sm"}},"textColor":"contrast-3"} /-->
+
+		</div>
+		<!-- /wp:column -->
+
+	</div>
+	<!-- /wp:columns -->
+
+	<!-- Product tabs: description, reviews, additional info -->
+	<!-- wp:woocommerce/product-details {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} /-->
+
+	<!-- Related products -->
+	<!-- wp:woocommerce/related-products {"style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} /-->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

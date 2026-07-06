@@ -1,0 +1,96 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Dark",
+	"slug": "dark",
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "base",          "color": "#0E1826", "name": "Base" },
+				{ "slug": "base-2",        "color": "#152238", "name": "Base 2" },
+				{ "slug": "contrast",      "color": "#F9F8F6", "name": "Contrast" },
+				{ "slug": "contrast-2",    "color": "#E8E6E1", "name": "Contrast 2" },
+				{ "slug": "contrast-3",    "color": "#B0ADA6", "name": "Contrast 3" },
+				{ "slug": "primary",       "color": "#D6DCE8", "name": "Primary" },
+				{ "slug": "primary-light", "color": "#ADB9D1", "name": "Primary Light" },
+				{ "slug": "accent",        "color": "#C4A25D", "name": "Accent" },
+				{ "slug": "accent-light",  "color": "#DFC28A", "name": "Accent Light" },
+				{ "slug": "border",        "color": "#1C2B4A", "name": "Border" },
+				{ "slug": "white",         "color": "#FFFFFF", "name": "White" },
+				{ "slug": "neutral-50",    "color": "#FAFAF8", "name": "Neutral 50" },
+				{ "slug": "neutral-100",   "color": "#F4F3F0", "name": "Neutral 100" },
+				{ "slug": "neutral-200",   "color": "#E8E6E1", "name": "Neutral 200" },
+				{ "slug": "neutral-300",   "color": "#D4D1CB", "name": "Neutral 300" },
+				{ "slug": "neutral-400",   "color": "#B0ADA6", "name": "Neutral 400" },
+				{ "slug": "neutral-500",   "color": "#8C8980", "name": "Neutral 500" },
+				{ "slug": "neutral-600",   "color": "#6B6B72", "name": "Neutral 600" },
+				{ "slug": "neutral-700",   "color": "#4A4A52", "name": "Neutral 700" },
+				{ "slug": "neutral-800",   "color": "#2D2D35", "name": "Neutral 800" },
+				{ "slug": "neutral-900",   "color": "#1A1A22", "name": "Neutral 900" },
+				{ "slug": "neutral-950",   "color": "#0C0C0F", "name": "Neutral 950" },
+				{ "slug": "navy-100",      "color": "#D6DCE8", "name": "Navy 100" },
+				{ "slug": "navy-200",      "color": "#ADB9D1", "name": "Navy 200" },
+				{ "slug": "navy-300",      "color": "#7A8EB5", "name": "Navy 300" },
+				{ "slug": "navy-400",      "color": "#4A6398", "name": "Navy 400" },
+				{ "slug": "navy-500",      "color": "#2A3F6B", "name": "Navy 500" },
+				{ "slug": "navy-600",      "color": "#1C2B4A", "name": "Navy 600" },
+				{ "slug": "navy-700",      "color": "#152238", "name": "Navy 700" },
+				{ "slug": "navy-800",      "color": "#0E1826", "name": "Navy 800" },
+				{ "slug": "navy-900",      "color": "#070E16", "name": "Navy 900" },
+				{ "slug": "gold-100",      "color": "#F5EDD8", "name": "Gold 100" },
+				{ "slug": "gold-200",      "color": "#ECDAB0", "name": "Gold 200" },
+				{ "slug": "gold-300",      "color": "#DFC28A", "name": "Gold 300" },
+				{ "slug": "gold-400",      "color": "#C4A25D", "name": "Gold 400" },
+				{ "slug": "gold-500",      "color": "#A8823A", "name": "Gold 500" },
+				{ "slug": "gold-600",      "color": "#8B6914", "name": "Gold 600" }
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--base)",
+			"text": "var(--wp--preset--color--contrast)"
+		},
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "var(--wp--preset--color--contrast)"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--accent)"
+				},
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--accent-light)"
+					}
+				}
+			},
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--accent)",
+					"text": "var(--wp--preset--color--base)"
+				},
+				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--accent-light)",
+						"text": "var(--wp--preset--color--base)"
+					}
+				}
+			}
+		},
+		"blocks": {
+			"core/navigation": {
+				"color": {
+					"text": "var(--wp--preset--color--contrast)"
+				}
+			},
+			"core/separator": {
+				"color": {
+					"background": "var(--wp--preset--color--border)"
+				}
+			}
+		}
+	}
+}

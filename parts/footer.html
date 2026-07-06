@@ -1,0 +1,133 @@
+<!-- Footer template part.
+     Referenced from templates via: wp:template-part {"slug":"footer","tagName":"footer"}
+     The <footer> semantic landmark comes from tagName in the template reference.
+     This file starts with a group block (renders as <div>) — no double-footer element.
+
+     className="site-footer" is targeted in theme.css for logo inversion and
+     nav hover styles on the dark primary background. -->
+
+<!-- wp:group {"className":"site-footer","backgroundColor":"primary","textColor":"base","style":{"spacing":{"padding":{"top":"var:preset|spacing|24","right":"var:preset|spacing|6","bottom":"var:preset|spacing|10","left":"var:preset|spacing|6"}}},"layout":{"type":"constrained","wideSize":"1280px"}} -->
+<div class="wp-block-group site-footer has-primary-background-color has-base-color has-background has-text-color" style="padding-top:var(--wp--preset--spacing--24);padding-right:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--6)">
+
+	<!-- Four-column grid: brand (33%) + three nav columns (22% each).
+	     Stacks to single column on mobile automatically. -->
+	<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|16"},"margin":{"bottom":"var:preset|spacing|20"}}}} -->
+	<div class="wp-block-columns" style="margin-bottom:var(--wp--preset--spacing--20)">
+
+		<!-- Brand column -->
+		<!-- wp:column {"width":"33.33%"} -->
+		<div class="wp-block-column" style="flex-basis:33.33%">
+
+			<!-- Logo: inverted to white via .site-footer img filter in theme.css -->
+			<!-- wp:site-logo {"width":130,"shouldSyncIcon":false,"isLink":true} /-->
+
+			<!-- wp:site-tagline {"fontSize":"xs","style":{"spacing":{"margin":{"top":"var:preset|spacing|4","bottom":"0"}},"typography":{"letterSpacing":"0.15em","textTransform":"uppercase"}},"textColor":"neutral-400"} /-->
+
+			<!-- wp:paragraph {"fontSize":"sm","textColor":"neutral-400","style":{"spacing":{"margin":{"top":"var:preset|spacing|5","bottom":"var:preset|spacing|8"}}}} -->
+			<p class="has-neutral-400-color has-text-color has-sm-font-size" style="margin-top:var(--wp--preset--spacing--5);margin-bottom:var(--wp--preset--spacing--8)">Crafting digital experiences that elevate brands and drive measurable results for ambitious organisations.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- Social links — logo-only style with accent icon colour.
+			     Replace placeholder # URLs with live profile URLs. -->
+			<!-- wp:social-links {"iconColor":"accent","iconColorValue":"#C4A25D","size":"has-small-icon-size","style":{"spacing":{"blockGap":"var:preset|spacing|4"}},"className":"is-style-logos-only"} -->
+			<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">
+				<!-- wp:social-link {"url":"#","service":"linkedin"} /-->
+				<!-- wp:social-link {"url":"#","service":"x"} /-->
+				<!-- wp:social-link {"url":"#","service":"instagram"} /-->
+				<!-- wp:social-link {"url":"#","service":"dribbble"} /-->
+			</ul>
+			<!-- /wp:social-links -->
+
+		</div>
+		<!-- /wp:column -->
+
+		<!-- Services column -->
+		<!-- wp:column {"width":"22.22%"} -->
+		<div class="wp-block-column" style="flex-basis:22.22%">
+
+			<!-- wp:heading {"level":6,"textColor":"accent","fontSize":"xs","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|6"}},"typography":{"letterSpacing":"0.1em"}}} -->
+			<h6 class="wp-block-heading has-accent-color has-text-color has-xs-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--6);letter-spacing:0.1em">Services</h6>
+			<!-- /wp:heading -->
+
+			<!-- wp:navigation {"overlayMenu":"never","textColor":"neutral-300","fontSize":"sm","style":{"spacing":{"blockGap":"var:preset|spacing|3"}},"layout":{"type":"flex","orientation":"vertical","flexWrap":"nowrap"}} -->
+				<!-- wp:navigation-link {"label":"Brand Strategy","url":"#","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"Web Design","url":"#","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"Development","url":"#","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"Digital Marketing","url":"#","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"SEO &amp; Content","url":"#","kind":"custom"} /-->
+			<!-- /wp:navigation -->
+
+		</div>
+		<!-- /wp:column -->
+
+		<!-- Company column -->
+		<!-- wp:column {"width":"22.22%"} -->
+		<div class="wp-block-column" style="flex-basis:22.22%">
+
+			<!-- wp:heading {"level":6,"textColor":"accent","fontSize":"xs","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|6"}},"typography":{"letterSpacing":"0.1em"}}} -->
+			<h6 class="wp-block-heading has-accent-color has-text-color has-xs-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--6);letter-spacing:0.1em">Company</h6>
+			<!-- /wp:heading -->
+
+			<!-- wp:navigation {"overlayMenu":"never","textColor":"neutral-300","fontSize":"sm","style":{"spacing":{"blockGap":"var:preset|spacing|3"}},"layout":{"type":"flex","orientation":"vertical","flexWrap":"nowrap"}} -->
+				<!-- wp:navigation-link {"label":"About Us","url":"#about","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"Our Team","url":"/team","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"Case Studies","url":"/work","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"Blog","url":"/blog","kind":"custom"} /-->
+				<!-- wp:navigation-link {"label":"Contact","url":"#contact","kind":"custom"} /-->
+			<!-- /wp:navigation -->
+
+		</div>
+		<!-- /wp:column -->
+
+		<!-- Connect column -->
+		<!-- wp:column {"width":"22.22%"} -->
+		<div class="wp-block-column" style="flex-basis:22.22%">
+
+			<!-- wp:heading {"level":6,"textColor":"accent","fontSize":"xs","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|6"}},"typography":{"letterSpacing":"0.1em"}}} -->
+			<h6 class="wp-block-heading has-accent-color has-text-color has-xs-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--6);letter-spacing:0.1em">Connect</h6>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"textColor":"neutral-400","fontSize":"sm","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|2"}}}} -->
+			<p class="has-neutral-400-color has-text-color has-sm-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--2)">hello@lukaagency.com</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:paragraph {"textColor":"neutral-400","fontSize":"sm","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|8"}}}} -->
+			<p class="has-neutral-400-color has-text-color has-sm-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--8)">+1 (555) 000-0000</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:button {"backgroundColor":"accent","textColor":"contrast","fontSize":"xs","style":{"border":{"radius":"0"},"spacing":{"padding":{"top":"0.75rem","right":"1.5rem","bottom":"0.75rem","left":"1.5rem"}}}} -->
+			<div class="wp-block-button has-custom-font-size">
+				<a class="wp-block-button__link has-accent-background-color has-contrast-color has-text-color has-background wp-element-button"
+				   href="#contact"
+				   style="border-radius:0;padding-top:0.75rem;padding-right:1.5rem;padding-bottom:0.75rem;padding-left:1.5rem">
+					Get In Touch
+				</a>
+			</div>
+			<!-- /wp:button -->
+
+		</div>
+		<!-- /wp:column -->
+
+	</div>
+	<!-- /wp:columns -->
+
+	<!-- Bottom bar: copyright left, legal nav right.
+	     rgba border avoids needing a custom palette entry for the divider. -->
+	<!-- wp:group {"style":{"border":{"top":{"color":"rgba(255,255,255,0.1)","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|8"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group" style="border-top-color:rgba(255,255,255,0.1);border-top-style:solid;border-top-width:1px;padding-top:var(--wp--preset--spacing--8)">
+
+		<!-- wp:paragraph {"textColor":"neutral-600","fontSize":"xs"} -->
+		<p class="has-neutral-600-color has-text-color has-xs-font-size">© 2025 Luka Agency. All rights reserved.</p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:navigation {"overlayMenu":"never","textColor":"neutral-600","fontSize":"xs","style":{"spacing":{"blockGap":"var:preset|spacing|6"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
+			<!-- wp:navigation-link {"label":"Privacy Policy","url":"/privacy","kind":"custom"} /-->
+			<!-- wp:navigation-link {"label":"Terms of Use","url":"/terms","kind":"custom"} /-->
+			<!-- wp:navigation-link {"label":"Cookie Policy","url":"/cookies","kind":"custom"} /-->
+		<!-- /wp:navigation -->
+
+	</div>
+	<!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->

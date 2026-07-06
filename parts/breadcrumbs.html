@@ -1,0 +1,17 @@
+<!-- Breadcrumbs template part.
+     WordPress core has no native breadcrumb block. This part provides a styled
+     container. Populate it with your SEO plugin's block or shortcode:
+       - Rank Math: [rank_math_breadcrumb] via core/shortcode
+       - Yoast SEO:  [wpseo_breadcrumb]     via core/shortcode
+       - BCn plugin: core/post-breadcrumbs  (if installed)
+     The container styling is intentional — replace the shortcode block below. -->
+
+<!-- wp:group {"style":{"border":{"bottom":{"color":"var:preset|color|border","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|3","right":"var:preset|spacing|6","bottom":"var:preset|spacing|3","left":"var:preset|spacing|6"}}},"backgroundColor":"base-2","layout":{"type":"constrained","wideSize":"1280px"},"className":"breadcrumbs-bar"} -->
+<div class="wp-block-group breadcrumbs-bar has-base-2-background-color has-background" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-style:solid;border-bottom-width:1px;padding-top:var(--wp--preset--spacing--3);padding-right:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--3);padding-left:var(--wp--preset--spacing--6)">
+
+	<!-- wp:shortcode -->
+	<p>[rank_math_breadcrumb]</p>
+	<!-- /wp:shortcode -->
+
+</div>
+<!-- /wp:group -->

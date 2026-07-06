@@ -1,0 +1,620 @@
+/*
+ * Luka Agency — Component CSS
+ * Last updated: footer + WooCommerce additions appended below.
+ *
+ * Handles anything theme.json cannot express:
+ * skip links, z-index, backdrop-filter, hover transitions,
+ * focus states, mobile overrides, and custom block style variants.
+ *
+ * Organised by component. All values reference theme.json tokens
+ * via var(--wp--preset--*) so dark-mode style variations work automatically.
+ */
+
+/* =============================================================================
+   Skip Link
+   Visually hidden until focused — WCAG 2.4.1 (Bypass Blocks), Level A.
+   Uses modern clip-path technique instead of position: absolute / top: -100%
+   which can fail inside overflow: hidden containers.
+   ============================================================================= */
+
+.luka-skip-link {
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	word-wrap: normal;
+}
+
+.luka-skip-link:focus {
+	background-color: var(--wp--preset--color--primary);
+	border-radius: 0;
+	clip: auto;
+	clip-path: none;
+	color: var(--wp--preset--color--white);
+	display: block;
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--xs);
+	font-weight: 600;
+	height: auto;
+	left: var(--wp--preset--spacing--4);
+	letter-spacing: 0.08em;
+	overflow: visible;
+	padding: 0.75rem 1.5rem;
+	position: fixed;
+	text-decoration: none;
+	text-transform: uppercase;
+	top: var(--wp--preset--spacing--4);
+	width: auto;
+	z-index: 9999;
+}
+
+/* =============================================================================
+   Site Header
+   The .site-header class is added to the outermost Group block in header.html.
+   Sticky positioning is set via the block editor (position: sticky, top: 0px).
+   Here we add z-index and the progressive-enhancement frosted glass effect.
+   ============================================================================= */
+
+.site-header {
+	z-index: 100;
+	transition:
+		background-color var(--luka-transition),
+		box-shadow var(--luka-transition);
+}
+
+/*
+ * Frosted glass — applies only when backdrop-filter is supported (Chrome 76+,
+ * Firefox 103+, Safari 9+). Falls back to an opaque base colour automatically.
+ * color-mix() lets us preserve the semantic token so dark-mode works.
+ */
+@supports (backdrop-filter: blur(1px)) {
+	.site-header {
+		/* stylelint-disable-next-line function-no-unknown */
+		background-color: color-mix(in srgb, var(--wp--preset--color--base) 92%, transparent) !important;
+		backdrop-filter: blur(12px) saturate(160%);
+		-webkit-backdrop-filter: blur(12px) saturate(160%);
+	}
+}
+
+/* Extra shadow when backdrop-filter is unavailable */
+@supports not (backdrop-filter: blur(1px)) {
+	.site-header {
+		box-shadow:
+			0 1px 0 var(--wp--preset--color--border),
+			0 4px 20px rgba(12, 12, 15, 0.07);
+	}
+}
+
+/* =============================================================================
+   Primary Navigation — hover underline, active state, submenu polish
+   ============================================================================= */
+
+/* Underline slide-in on hover — pure CSS, no JS */
+.primary-navigation .wp-block-navigation-item__content {
+	padding-block: 0.35rem;
+	position: relative;
+	transition: color var(--luka-transition);
+}
+
+.primary-navigation .wp-block-navigation-item__content::after {
+	background-color: var(--wp--preset--color--accent);
+	bottom: 0;
+	content: "";
+	height: 1px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	transform: scaleX(0);
+	transform-origin: left center;
+	transition: transform var(--luka-transition);
+}
+
+.primary-navigation .wp-block-navigation-item__content:hover::after,
+.primary-navigation .current-menu-item > .wp-block-navigation-item__content::after,
+.primary-navigation .current-page-ancestor > .wp-block-navigation-item__content::after {
+	transform: scaleX(1);
+}
+
+.primary-navigation .current-menu-item > .wp-block-navigation-item__content,
+.primary-navigation .current-page-ancestor > .wp-block-navigation-item__content {
+	color: var(--wp--preset--color--accent);
+}
+
+/* Submenu dropdown */
+.primary-navigation .wp-block-navigation__submenu-container {
+	background-color: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 0;
+	box-shadow: var(--wp--preset--shadow--lg);
+	min-width: 220px;
+	padding: var(--wp--preset--spacing--3) 0;
+}
+
+.primary-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	font-size: var(--wp--preset--font-size--sm);
+	padding: var(--wp--preset--spacing--3) var(--wp--preset--spacing--6);
+}
+
+/* Hide the slide-in underline on submenu items */
+.primary-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content::after {
+	display: none;
+}
+
+/* Mobile overlay */
+.primary-navigation .wp-block-navigation__responsive-container.is-menu-open {
+	background-color: var(--wp--preset--color--base);
+	padding: var(--wp--preset--spacing--8) var(--wp--preset--spacing--6);
+	z-index: 101;
+}
+
+.primary-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
+	font-size: var(--wp--preset--font-size--lg);
+	padding-block: var(--wp--preset--spacing--4);
+}
+
+/* Hamburger / close toggle buttons */
+.primary-navigation .wp-block-navigation__responsive-container-open,
+.primary-navigation .wp-block-navigation__responsive-container-close {
+	background: transparent;
+	border: none;
+	color: var(--wp--preset--color--contrast);
+	cursor: pointer;
+	padding: var(--wp--preset--spacing--2);
+	transition: color var(--luka-transition);
+}
+
+.primary-navigation .wp-block-navigation__responsive-container-open:hover,
+.primary-navigation .wp-block-navigation__responsive-container-close:hover {
+	color: var(--wp--preset--color--accent);
+}
+
+/* =============================================================================
+   Header Search Block
+   CSS-only expandable: input width transitions from 0 → 180px on :focus-within.
+   No JavaScript. The browser's native :focus-within pseudo-class does the work.
+   ============================================================================= */
+
+.header-search.wp-block-search {
+	align-items: center;
+	display: flex;
+}
+
+.header-search .wp-block-search__inside-wrapper {
+	align-items: center;
+	display: flex;
+}
+
+.header-search .wp-block-search__input {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid transparent;
+	border-radius: 0;
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--sm);
+	min-width: 0;
+	overflow: hidden;
+	padding: 0.4rem 0.5rem;
+	transition:
+		width var(--luka-transition),
+		border-color var(--luka-transition),
+		padding var(--luka-transition);
+	width: 0;
+}
+
+.header-search .wp-block-search__input::placeholder {
+	color: var(--wp--preset--color--contrast-3);
+}
+
+/* Expand on keyboard focus or mouse click via CSS :focus-within */
+.header-search:focus-within .wp-block-search__input {
+	border-bottom-color: var(--wp--preset--color--border);
+	width: 180px;
+}
+
+.header-search .wp-block-search__button {
+	align-items: center;
+	background: transparent;
+	border: none;
+	color: var(--wp--preset--color--contrast-3);
+	cursor: pointer;
+	display: flex;
+	flex-shrink: 0;
+	padding: 0.4rem;
+	transition: color var(--luka-transition);
+}
+
+.header-search .wp-block-search__button:hover,
+.header-search .wp-block-search__button:focus-visible {
+	color: var(--wp--preset--color--accent);
+}
+
+.header-search .wp-block-search__button svg {
+	height: 18px;
+	width: 18px;
+}
+
+/* =============================================================================
+   Header CTA Button
+   ============================================================================= */
+
+.header-cta .wp-block-button__link {
+	transition:
+		background-color var(--luka-transition),
+		border-color var(--luka-transition),
+		color var(--luka-transition);
+	white-space: nowrap;
+}
+
+/* =============================================================================
+   Responsive — hide search + CTA on small screens (nav overlay takes over)
+   ============================================================================= */
+
+@media (max-width: 782px) {
+	.header-search {
+		display: none;
+	}
+
+	.header-cta {
+		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.site-header .wp-block-site-logo img {
+		max-width: 100px;
+	}
+}
+
+/* =============================================================================
+   Custom Block Styles
+   Companion CSS for styles registered in inc/block-styles.php.
+   ============================================================================= */
+
+/* Buttons */
+.wp-block-button.is-style-luka-outlined .wp-block-button__link {
+	background: transparent;
+	border: 1px solid currentColor;
+	color: var(--wp--preset--color--primary);
+}
+
+.wp-block-button.is-style-luka-outlined .wp-block-button__link:hover {
+	background: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--white);
+}
+
+.wp-block-button.is-style-luka-ghost .wp-block-button__link {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	color: var(--wp--preset--color--primary);
+	padding-left: 0;
+	padding-right: 0;
+	text-decoration: underline;
+	text-decoration-color: var(--wp--preset--color--accent);
+	text-underline-offset: 3px;
+}
+
+.wp-block-button.is-style-luka-ghost .wp-block-button__link:hover {
+	color: var(--wp--preset--color--accent);
+}
+
+.wp-block-button.is-style-luka-accent .wp-block-button__link {
+	background: var(--wp--preset--color--accent);
+	border-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--white);
+}
+
+.wp-block-button.is-style-luka-accent .wp-block-button__link:hover {
+	background: var(--wp--preset--color--gold-600);
+	border-color: var(--wp--preset--color--gold-600);
+}
+
+/* Separators */
+.wp-block-separator.is-style-luka-dotted {
+	border-style: dotted;
+}
+
+.wp-block-separator.is-style-luka-gradient {
+	border: none;
+	background-image: linear-gradient(
+		to right,
+		transparent,
+		var(--wp--preset--color--accent),
+		transparent
+	);
+	height: 1px;
+}
+
+/* Images */
+.wp-block-image.is-style-luka-rounded img {
+	border-radius: var(--luka-radius-lg);
+}
+
+.wp-block-image.is-style-luka-shadowed img {
+	box-shadow: var(--wp--preset--shadow--xl);
+}
+
+/* Groups */
+.wp-block-group.is-style-luka-card {
+	background-color: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--border);
+	box-shadow: var(--wp--preset--shadow--md);
+}
+
+.wp-block-group.is-style-luka-glass {
+	backdrop-filter: blur(16px) saturate(150%);
+	-webkit-backdrop-filter: blur(16px) saturate(150%);
+	/* stylelint-disable-next-line function-no-unknown */
+	background-color: color-mix(in srgb, var(--wp--preset--color--base) 70%, transparent);
+	border: 1px solid color-mix(in srgb, var(--wp--preset--color--border) 60%, transparent);
+}
+
+/* Headings */
+.wp-block-heading.is-style-luka-eyebrow {
+	color: var(--wp--preset--color--accent);
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--xs);
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.wp-block-heading.is-style-luka-display {
+	font-family: var(--wp--preset--font-family--serif);
+	font-size: var(--wp--preset--font-size--5xl);
+	font-weight: 300;
+	letter-spacing: -0.03em;
+	line-height: 1.02;
+}
+
+/* Paragraphs */
+.wp-block-paragraph.is-style-luka-lead {
+	font-size: var(--wp--preset--font-size--md);
+	line-height: 1.7;
+}
+
+.wp-block-paragraph.is-style-luka-caption {
+	color: var(--wp--preset--color--contrast-3);
+	font-size: var(--wp--preset--font-size--xs);
+}
+
+/* Lists */
+.wp-block-list.is-style-luka-check {
+	list-style: none;
+	padding-left: 0;
+}
+
+.wp-block-list.is-style-luka-check li {
+	padding-left: 1.75rem;
+	position: relative;
+}
+
+.wp-block-list.is-style-luka-check li::before {
+	color: var(--wp--preset--color--accent);
+	content: "✓";
+	font-weight: 700;
+	left: 0;
+	position: absolute;
+}
+
+.wp-block-list.is-style-luka-arrow {
+	list-style: none;
+	padding-left: 0;
+}
+
+.wp-block-list.is-style-luka-arrow li {
+	padding-left: 1.75rem;
+	position: relative;
+}
+
+.wp-block-list.is-style-luka-arrow li::before {
+	color: var(--wp--preset--color--accent);
+	content: "→";
+	left: 0;
+	position: absolute;
+	transition: transform var(--luka-transition);
+}
+
+.wp-block-list.is-style-luka-arrow li:hover::before {
+	transform: translateX(3px);
+}
+
+/* =============================================================================
+   Site Footer
+   ============================================================================= */
+
+/* Invert the logo to white on the dark navy footer background.
+   Editors upload a full-colour logo once; CSS handles the inversion. */
+.site-footer .wp-block-site-logo img {
+	filter: brightness(0) invert(1);
+	opacity: 0.9;
+}
+
+/* Footer navigation links — muted by default, accent on hover */
+.site-footer .wp-block-navigation a.wp-block-navigation-item__content {
+	opacity: 0.65;
+	text-decoration: none;
+	transition: opacity var(--luka-transition), color var(--luka-transition);
+}
+
+.site-footer .wp-block-navigation a.wp-block-navigation-item__content:hover,
+.site-footer .wp-block-navigation a.wp-block-navigation-item__content:focus-visible {
+	color: var(--wp--preset--color--accent) !important;
+	opacity: 1;
+}
+
+/* Social links — lift on hover */
+.site-footer .wp-block-social-links .wp-social-link {
+	opacity: 0.6;
+	transition: opacity var(--luka-transition), transform var(--luka-transition);
+}
+
+.site-footer .wp-block-social-links .wp-social-link:hover {
+	opacity: 1;
+	transform: translateY(-2px);
+}
+
+/* =============================================================================
+   WooCommerce — brand integration
+   Overrides WooCommerce default styles to match the Luka Agency design system.
+   ============================================================================= */
+
+/* Buttons */
+.wc-block-components-button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+	background-color: var(--wp--preset--color--primary) !important;
+	border-radius: 0 !important;
+	color: var(--wp--preset--color--white) !important;
+	font-family: var(--wp--preset--font-family--sans) !important;
+	font-size: var(--wp--preset--font-size--xs) !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.08em !important;
+	text-transform: uppercase !important;
+	transition: background-color var(--luka-transition) !important;
+}
+
+.wc-block-components-button:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover {
+	background-color: var(--wp--preset--color--accent) !important;
+}
+
+/* Price */
+.woocommerce .price,
+.wc-block-components-product-price {
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--serif);
+	font-weight: 300;
+}
+
+/* Sale badge */
+.woocommerce span.onsale {
+	background-color: var(--wp--preset--color--accent);
+	border-radius: 0;
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--xs);
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	min-height: unset;
+	min-width: unset;
+	padding: 0.25rem 0.5rem;
+	text-transform: uppercase;
+}
+
+/* Form fields */
+.wc-block-components-text-input input,
+.woocommerce .input-text,
+.woocommerce input[type="text"],
+.woocommerce input[type="email"],
+.woocommerce input[type="tel"],
+.woocommerce select {
+	border: 1px solid var(--wp--preset--color--border) !important;
+	border-radius: 0 !important;
+	font-family: var(--wp--preset--font-family--sans) !important;
+	font-size: var(--wp--preset--font-size--sm) !important;
+}
+
+.wc-block-components-text-input input:focus,
+.woocommerce .input-text:focus {
+	border-color: var(--wp--preset--color--primary) !important;
+	box-shadow: none !important;
+	outline: 2px solid var(--wp--preset--color--accent) !important;
+	outline-offset: 2px !important;
+}
+
+/* =============================================================================
+   Breadcrumbs
+   ============================================================================= */
+
+.breadcrumbs-bar .wp-block-shortcode,
+.breadcrumbs-bar p {
+	color: var(--wp--preset--color--contrast-3);
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--xs);
+	letter-spacing: 0.04em;
+	margin: 0;
+}
+
+.breadcrumbs-bar a {
+	color: var(--wp--preset--color--contrast-3);
+	text-decoration: none;
+	transition: color var(--luka-transition);
+}
+
+.breadcrumbs-bar a:hover {
+	color: var(--wp--preset--color--accent);
+}
+
+/* =============================================================================
+   Sidebar
+   ============================================================================= */
+
+.sidebar .wp-block-search__input {
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 0;
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--sm);
+	width: 100%;
+}
+
+.sidebar .wp-block-latest-posts li {
+	border-bottom: 1px solid var(--wp--preset--color--border);
+	padding-bottom: var(--wp--preset--spacing--4);
+}
+
+.sidebar .wp-block-latest-posts a {
+	color: var(--wp--preset--color--contrast);
+	font-weight: 500;
+	text-decoration: none;
+	transition: color var(--luka-transition);
+}
+
+.sidebar .wp-block-latest-posts a:hover {
+	color: var(--wp--preset--color--accent);
+}
+
+/* =============================================================================
+   Post Navigation (prev/next)
+   ============================================================================= */
+
+.wp-block-post-navigation-link a {
+	color: var(--wp--preset--color--primary);
+	text-decoration: none;
+	transition: color var(--luka-transition);
+}
+
+.wp-block-post-navigation-link a:hover {
+	color: var(--wp--preset--color--accent);
+}
+
+/* =============================================================================
+   Query Pagination
+   ============================================================================= */
+
+.wp-block-query-pagination .page-numbers {
+	border: 1px solid var(--wp--preset--color--border);
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--sm);
+	font-weight: 500;
+	min-width: 2.5rem;
+	padding: 0.5rem 0.75rem;
+	text-align: center;
+	text-decoration: none;
+	transition: background-color var(--luka-transition), border-color var(--luka-transition), color var(--luka-transition);
+}
+
+.wp-block-query-pagination .page-numbers.current,
+.wp-block-query-pagination .page-numbers:hover {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--white);
+}

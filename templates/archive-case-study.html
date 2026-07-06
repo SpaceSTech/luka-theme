@@ -1,0 +1,69 @@
+<!-- archive-case-study.html — Case Studies archive (portfolio grid).
+     3-column grid on desktop, 2-col tablet, 1-col mobile.
+     Filterable by Industry and Service taxonomies via query block. -->
+
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"main-content","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|24"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" id="main-content" style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--24)">
+
+	<!-- ── Archive Header ────────────────────────────────────────────────── -->
+	<!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|16"}}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+	<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--16)">
+
+		<!-- wp:heading {"level":6,"textColor":"accent","fontSize":"xs","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|4"}},"typography":{"letterSpacing":"0.12em"}}} -->
+		<h6 class="wp-block-heading has-accent-color has-text-color has-xs-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--4);letter-spacing:0.12em">Our Work</h6>
+		<!-- /wp:heading -->
+
+		<!-- wp:heading {"level":1,"fontSize":"4xl","style":{"typography":{"lineHeight":"1.1"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|6"}}}} -->
+		<h1 class="wp-block-heading has-4-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--6);line-height:1.1">Selected Case Studies</h1>
+		<!-- /wp:heading -->
+
+		<!-- wp:paragraph {"textColor":"contrast-3","fontSize":"md","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
+		<p class="has-contrast-3-color has-text-color has-md-font-size" style="margin-top:0;margin-bottom:0">A curated selection of projects that define our approach — strategic thinking, meticulous craft, and results that matter.</p>
+		<!-- /wp:paragraph -->
+
+	</div>
+	<!-- /wp:group -->
+
+	<!-- ── Case Study Grid ───────────────────────────────────────────────── -->
+	<!-- wp:query {"queryId":0,"query":{"perPage":12,"pages":0,"offset":0,"postType":"case-study","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"layout":{"type":"default"}} -->
+	<div class="wp-block-query">
+
+		<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|8"}},"layout":{"type":"grid","columnCount":3}} -->
+
+			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|4"}},"layout":{"type":"default"}} -->
+			<div class="wp-block-group">
+
+				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|5"}}}} /-->
+
+				<!-- wp:post-terms {"term":"industry","fontSize":"xs","textColor":"accent","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|2"}},"typography":{"textTransform":"uppercase","letterSpacing":"0.08em","fontWeight":"600"}}} /-->
+
+				<!-- wp:post-title {"isLink":true,"fontSize":"xl","style":{"typography":{"lineHeight":"1.25"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|3"}}}} /-->
+
+				<!-- wp:post-excerpt {"numberOfWords":18,"textColor":"contrast-3","fontSize":"sm","style":{"spacing":{"margin":{"bottom":"0"}}}} /-->
+
+			</div>
+			<!-- /wp:group -->
+
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-no-results -->
+			<!-- wp:paragraph {"textAlign":"center","textColor":"contrast-3","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
+			<p class="has-text-align-center has-contrast-3-color has-text-color" style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">No case studies found.</p>
+			<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+
+		<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|16"}}}} -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+
+	</div>
+	<!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

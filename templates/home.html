@@ -1,0 +1,18 @@
+<!-- home.html — Front Page template.
+     Activated when WordPress Reading Settings → "Your homepage displays" is set to
+     a static page. The page's own block content (set in the Page editor) is rendered
+     via wp:post-content with a default (full-width) layout so patterns can bleed edge-to-edge.
+     All hero sections, service grids, and CTAs live in the page editor — not hardcoded here. -->
+
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"main-content","layout":{"type":"default"}} -->
+<main class="wp-block-group" id="main-content">
+
+	<!-- default layout allows full-width (alignfull) blocks to bleed edge-to-edge -->
+	<!-- wp:post-content {"layout":{"type":"default"}} /-->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
