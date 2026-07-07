@@ -5,7 +5,7 @@
  * Categories: luka-agency-sections
  * Viewport Width: 1280
  * Inserter: true
- * Description: Six FAQs using native core/details block — no JavaScript, WCAG 2.2 compliant.
+ * Description: Six FAQs in a 2-column layout — heading left, native accordion right. No JavaScript, WCAG 2.2 compliant.
  */
 ?>
 
@@ -15,7 +15,7 @@
 	<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|20"}}}} -->
 	<div class="wp-block-columns">
 
-		<!-- Left: section header (sticky feel) -->
+		<!-- Left: sticky header column -->
 		<!-- wp:column {"width":"38%"} -->
 		<div class="wp-block-column" style="flex-basis:38%">
 
@@ -28,7 +28,7 @@
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"textColor":"contrast-3","fontSize":"sm","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|10"}},"typography":{"lineHeight":"1.7"}}} -->
-			<p class="has-contrast-3-color has-text-color has-sm-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--10);line-height:1.7">Can't find your answer here? We're happy to talk through your specific situation.</p>
+			<p class="has-contrast-3-color has-text-color has-sm-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--10);line-height:1.7">Can't find what you're looking for? We're happy to talk through your specific situation in a free strategy call.</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:button {"backgroundColor":"primary","textColor":"white","fontSize":"xs","style":{"border":{"radius":"0"},"spacing":{"padding":{"top":"0.875rem","right":"2rem","bottom":"0.875rem","left":"2rem"}}}} -->
@@ -48,7 +48,7 @@
 			$faqs = [
 				[
 					'question' => 'How long does a typical project take?',
-					'answer'   => 'It depends on scope, but most brand and web projects run between 8–16 weeks from kick-off to launch. We set clear milestones at the start and keep you updated throughout. Rush timelines are possible — ask us.',
+					'answer'   => 'It depends on scope, but most brand and web projects run between 8–16 weeks from kick-off to launch. We set clear milestones at the start and keep you updated throughout. Rush timelines are possible — just ask.',
 				],
 				[
 					'question' => 'What does working with Luka Agency actually look like?',
@@ -67,8 +67,8 @@
 					'answer'   => 'Yes. We offer post-launch care packages covering maintenance, performance monitoring, and iterative improvements. Many clients continue with us on a retained basis after their initial project.',
 				],
 				[
-					'question' => 'Can you work with our existing brand or do we need to start from scratch?',
-					'answer'   => 'We do both. If your foundations are strong, we build on them. If they need rethinking, we\'ll be honest about that and help you make the right call — not the expensive one.',
+					'question' => 'Can you work with our existing brand, or do we need to start from scratch?',
+					'answer'   => 'We do both. If your foundations are strong, we build on them. If they need rethinking, we\'ll be honest about that — and help you make the right call, not the expensive one.',
 				],
 			];
 			?>
@@ -77,8 +77,8 @@
 			<div class="wp-block-group">
 
 				<?php foreach ( $faqs as $faq ) : ?>
-				<!-- wp:details {"style":{"border":{"bottom":{"color":"var:preset|color|border","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|6","bottom":"var:preset|spacing|6"}},"typography":{"fontWeight":"500","fontSize":"var:preset|font-size|md"}}} -->
-				<details class="wp-block-details" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-style:solid;border-bottom-width:1px;padding-top:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--6);font-weight:500;font-size:var(--wp--preset--font-size--md)">
+				<!-- wp:details {"style":{"border":{"top":{"color":"var:preset|color|border","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|6","bottom":"var:preset|spacing|6"}},"typography":{"fontWeight":"500","fontSize":"var:preset|font-size|base"}}} -->
+				<details class="wp-block-details" style="border-top-color:var(--wp--preset--color--border);border-top-style:solid;border-top-width:1px;padding-top:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--6);font-weight:500;font-size:var(--wp--preset--font-size--base)">
 					<summary><?php echo esc_html( $faq['question'] ); ?></summary>
 					<!-- wp:paragraph {"textColor":"contrast-3","fontSize":"sm","style":{"spacing":{"margin":{"top":"var:preset|spacing|4","bottom":"0"}},"typography":{"lineHeight":"1.7","fontWeight":"400"}}} -->
 					<p class="has-contrast-3-color has-text-color has-sm-font-size" style="margin-top:var(--wp--preset--spacing--4);margin-bottom:0;line-height:1.7;font-weight:400"><?php echo esc_html( $faq['answer'] ); ?></p>
@@ -86,6 +86,11 @@
 				</details>
 				<!-- /wp:details -->
 				<?php endforeach; ?>
+
+				<!-- Closing border -->
+				<!-- wp:separator {"backgroundColor":"border","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"className":"is-style-wide"} -->
+				<hr class="wp-block-separator has-text-color has-border-color has-background is-style-wide" style="margin-top:0;margin-bottom:0"/>
+				<!-- /wp:separator -->
 
 			</div>
 			<!-- /wp:group -->
