@@ -655,6 +655,7 @@
 		{ "name": "page-no-title",        "title": "Page (No Title)",   "postTypes": [ "page" ] },
 		{ "name": "page-wide",            "title": "Page (Wide)",       "postTypes": [ "page" ] },
 		{ "name": "page-landing",         "title": "Landing Page",      "postTypes": [ "page" ] },
+		{ "name": "page-elementor",       "title": "Elementor (Full Width)", "postTypes": [ "page", "post" ] },
 		{ "name": "single-case-study",    "title": "Case Study",        "postTypes": [ "case-study" ] },
 		{ "name": "archive-case-study",   "title": "Case Studies",      "postTypes": [ "case-study" ] },
 		{ "name": "blank",                "title": "Blank",             "postTypes": [ "page", "post" ] }

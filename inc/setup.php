@@ -13,6 +13,7 @@ add_action( 'after_setup_theme',  __NAMESPACE__ . '\\setup' );
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
 add_action( 'init',               __NAMESPACE__ . '\\register_post_types' );
 add_action( 'init',               __NAMESPACE__ . '\\register_taxonomies' );
+add_action( 'elementor/theme/register_locations', __NAMESPACE__ . '\\register_elementor_locations' );
 
 /**
  * Core theme support flags, image sizes, and nav menu locations.
@@ -138,6 +139,17 @@ function register_taxonomies(): void {
 		'show_in_rest' => true,
 		'rewrite'      => [ 'slug' => 'department' ],
 	] );
+}
+
+/**
+ * Register Elementor theme locations so header/footer can optionally
+ * be managed via Elementor Pro Theme Builder.
+ */
+function register_elementor_locations( $elementor_theme_manager ): void {
+	$elementor_theme_manager->register_location( 'header' );
+	$elementor_theme_manager->register_location( 'footer' );
+	$elementor_theme_manager->register_location( 'single' );
+	$elementor_theme_manager->register_location( 'archive' );
 }
 
 /**
