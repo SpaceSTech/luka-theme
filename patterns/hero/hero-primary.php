@@ -18,9 +18,9 @@
 		<!-- Eyebrow -->
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|4","margin":{"bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 		<div class="wp-block-group">
-			<!-- wp:separator {"backgroundColor":"accent","style":{"layout":{"selfStretch":"fixed","flexSize":"2rem"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"className":"is-style-wide"} -->
-			<hr class="wp-block-separator has-text-color has-accent-color has-accent-background-color has-background is-style-wide" style="margin-top:0;margin-bottom:0"/>
-			<!-- /wp:separator -->
+			<!-- wp:html -->
+			<div aria-hidden="true" style="width:2rem;height:2px;background-color:var(--wp--preset--color--accent);flex-shrink:0"></div>
+			<!-- /wp:html -->
 			<!-- wp:paragraph {"textColor":"accent","style":{"typography":{"fontWeight":"600","letterSpacing":"0.16em","textTransform":"uppercase","fontSize":"var:preset|font-size|xs"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
 			<p class="has-accent-color has-text-color" style="margin-top:0;margin-bottom:0;font-size:var(--wp--preset--font-size--xs);font-weight:600;letter-spacing:0.16em;text-transform:uppercase">Strategic Creative Agency</p>
 			<!-- /wp:paragraph -->

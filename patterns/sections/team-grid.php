@@ -75,7 +75,7 @@
 
 				<!-- Portrait image — 3:4 aspect ratio -->
 				<!-- wp:image {"aspectRatio":"3/4","scale":"cover","sizeSlug":"luka-portrait"} -->
-				<figure class="wp-block-image size-luka-portrait" style="aspect-ratio:3/4"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400' viewBox='0 0 300 400'%3E%3Crect width='300' height='400' fill='<?php echo $member['color']; ?>'/%3E%3Ctext x='150' y='200' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-size='11' fill='%23B0ADA6'%3ETeam photo%3C/text%3E%3C/svg%3E" alt="<?php echo esc_attr( $member['name'] ); ?>" style="aspect-ratio:3/4;object-fit:cover"/></figure>
+				<figure class="wp-block-image size-luka-portrait" style="aspect-ratio:3/4"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400' viewBox='0 0 300 400'%3E%3Crect width='300' height='400' fill='<?php echo esc_attr( $member['color'] ); ?>'/%3E%3Ctext x='150' y='200' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-size='11' fill='%23B0ADA6'%3ETeam photo%3C/text%3E%3C/svg%3E" alt="<?php echo esc_attr( $member['name'] ); ?>" style="aspect-ratio:3/4;object-fit:cover"/></figure>
 				<!-- /wp:image -->
 
 				<!-- Info block -->

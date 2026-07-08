@@ -84,7 +84,7 @@
 		<!-- wp:column {"verticalAlignment":"center","width":"50%","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}}} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
 
-			<!-- wp:image {"aspectRatio":"4/5","scale":"cover","sizeSlug":"full","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
+			<!-- wp:image {"aspectRatio":"4/5","scale":"cover","sizeSlug":"full"} -->
 			<figure class="wp-block-image size-full" style="aspect-ratio:4/5"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000' viewBox='0 0 800 1000'%3E%3Crect width='800' height='1000' fill='%23EFEDE8'/%3E%3Ctext x='400' y='500' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-size='16' fill='%23B0ADA6'%3EReplace with project image%3C/text%3E%3C/svg%3E" alt="" style="aspect-ratio:4/5;object-fit:cover"/></figure>
 			<!-- /wp:image -->
 

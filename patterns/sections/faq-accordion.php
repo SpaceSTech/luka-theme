@@ -77,8 +77,8 @@
 			<div class="wp-block-group">
 
 				<?php foreach ( $faqs as $faq ) : ?>
-				<!-- wp:details {"style":{"border":{"top":{"color":"var:preset|color|border","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|6","bottom":"var:preset|spacing|6"}},"typography":{"fontWeight":"500","fontSize":"var:preset|font-size|base"}}} -->
-				<details class="wp-block-details" style="border-top-color:var(--wp--preset--color--border);border-top-style:solid;border-top-width:1px;padding-top:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--6);font-weight:500;font-size:var(--wp--preset--font-size--base)">
+				<!-- wp:details {"style":{"border":{"top":{"color":"var:preset|color|border","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|6","bottom":"var:preset|spacing|6"}}}} -->
+				<details class="wp-block-details" style="border-top-color:var(--wp--preset--color--border);border-top-style:solid;border-top-width:1px;padding-top:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--6)">
 					<summary><?php echo esc_html( $faq['question'] ); ?></summary>
 					<!-- wp:paragraph {"textColor":"contrast-3","fontSize":"sm","style":{"spacing":{"margin":{"top":"var:preset|spacing|4","bottom":"0"}},"typography":{"lineHeight":"1.7","fontWeight":"400"}}} -->
 					<p class="has-contrast-3-color has-text-color has-sm-font-size" style="margin-top:var(--wp--preset--spacing--4);margin-bottom:0;line-height:1.7;font-weight:400"><?php echo esc_html( $faq['answer'] ); ?></p>

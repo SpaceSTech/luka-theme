@@ -33,9 +33,9 @@
 		?>
 
 		<?php foreach ( $logos as $logo ) : ?>
-		<!-- wp:image {"sizeSlug":"full","style":{"layout":{"selfStretch":"fixed","flexSize":"<?php echo esc_attr( $logo['w'] ); ?>px"},"color":{"duotone":"var:preset|duotone|navy-cream"}}} -->
-		<figure class="wp-block-image size-full" style="flex:0 0 <?php echo esc_attr( $logo['w'] ); ?>px"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='<?php echo esc_attr( $logo['w'] ); ?>' height='<?php echo esc_attr( $logo['h'] ); ?>' viewBox='0 0 <?php echo esc_attr( $logo['w'] ); ?> <?php echo esc_attr( $logo['h'] ); ?>'%3E%3Crect width='<?php echo esc_attr( $logo['w'] ); ?>' height='<?php echo esc_attr( $logo['h'] ); ?>' rx='2' fill='%23C4C0B8'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-size='9' fill='%23FAF9F7'%3E<?php echo rawurlencode( $logo['label'] ); ?>%3C/text%3E%3C/svg%3E" alt="<?php echo esc_attr( $logo['label'] ); ?> logo" width="<?php echo esc_attr( $logo['w'] ); ?>" height="<?php echo esc_attr( $logo['h'] ); ?>"/></figure>
-		<!-- /wp:image -->
+		<!-- wp:html -->
+		<figure style="flex:0 0 <?php echo esc_attr( $logo['w'] ); ?>px;margin:0;line-height:0"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='<?php echo esc_attr( $logo['w'] ); ?>' height='<?php echo esc_attr( $logo['h'] ); ?>' viewBox='0 0 <?php echo esc_attr( $logo['w'] ); ?> <?php echo esc_attr( $logo['h'] ); ?>'%3E%3Crect width='<?php echo esc_attr( $logo['w'] ); ?>' height='<?php echo esc_attr( $logo['h'] ); ?>' rx='2' fill='%23C4C0B8'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-size='9' fill='%23FAF9F7'%3E<?php echo rawurlencode( $logo['label'] ); ?>%3C/text%3E%3C/svg%3E" alt="<?php echo esc_attr( $logo['label'] ); ?> logo" width="<?php echo esc_attr( $logo['w'] ); ?>" height="<?php echo esc_attr( $logo['h'] ); ?>"/></figure>
+		<!-- /wp:html -->
 		<?php endforeach; ?>
 
 	</div>

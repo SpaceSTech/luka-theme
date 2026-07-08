@@ -16,9 +16,9 @@
 	<div class="wp-block-group">
 
 		<!-- Gold accent line centred -->
-		<!-- wp:separator {"backgroundColor":"accent","style":{"layout":{"selfStretch":"fixed","flexSize":"3rem"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"className":"is-style-wide"} -->
-		<hr class="wp-block-separator has-text-color has-accent-color has-accent-background-color has-background is-style-wide" style="margin-top:0;margin-bottom:0;align-self:center"/>
-		<!-- /wp:separator -->
+		<!-- wp:html -->
+		<div aria-hidden="true" style="width:3rem;height:2px;background-color:var(--wp--preset--color--accent);margin:0 auto"></div>
+		<!-- /wp:html -->
 
 		<!-- wp:heading {"level":2,"textAlign":"center","fontSize":"3xl","style":{"typography":{"lineHeight":"1.15","fontWeight":"300","letterSpacing":"-0.02em"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
 		<h2 class="wp-block-heading has-text-align-center has-3-xl-font-size" style="margin-top:0;margin-bottom:0;line-height:1.15;font-weight:300;letter-spacing:-0.02em">Ready to build something<br><em>remarkable together?</em></h2>

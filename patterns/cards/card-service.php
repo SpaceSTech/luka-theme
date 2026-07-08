@@ -13,9 +13,9 @@
 <div class="wp-block-group has-base-background-color has-background" style="border-color:var(--wp--preset--color--border);border-style:solid;border-width:1px;padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--8);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--8)">
 
 	<!-- Gold accent bar -->
-	<!-- wp:separator {"backgroundColor":"accent","style":{"layout":{"selfStretch":"fixed","flexSize":"2.5rem"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|6"}}},"className":"is-style-wide"} -->
-	<hr class="wp-block-separator has-text-color has-accent-color has-accent-background-color has-background is-style-wide" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--6)"/>
-	<!-- /wp:separator -->
+	<!-- wp:html -->
+	<div aria-hidden="true" style="width:2.5rem;height:2px;background-color:var(--wp--preset--color--accent);margin-bottom:var(--wp--preset--spacing--6)"></div>
+	<!-- /wp:html -->
 
 	<!-- wp:heading {"level":3,"fontSize":"xl","style":{"typography":{"lineHeight":"1.3","fontWeight":"400"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|4"}}}} -->
 	<h3 class="wp-block-heading has-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--4);line-height:1.3;font-weight:400">Service Name</h3>

@@ -47,7 +47,7 @@
 			],
 			[
 				'number'      => '02',
-				'title'       => 'Web Design &amp; Development',
+				'title'       => 'Web Design & Development',
 				'description' => 'High-performance websites engineered for conversion, built to scale, and designed to leave a lasting first impression.',
 				'link'        => '/services/web-design',
 			],
@@ -59,19 +59,19 @@
 			],
 			[
 				'number'      => '04',
-				'title'       => 'UX &amp; Product Design',
+				'title'       => 'UX & Product Design',
 				'description' => 'Intuitive interfaces and seamless user journeys crafted through research, testing, and obsessive attention to detail.',
 				'link'        => '/services/ux-design',
 			],
 			[
 				'number'      => '05',
-				'title'       => 'Content &amp; SEO',
+				'title'       => 'Content & SEO',
 				'description' => 'Editorial content, keyword strategy, and technical SEO that builds authority, earns trust, and compounds over time.',
 				'link'        => '/services/content-seo',
 			],
 			[
 				'number'      => '06',
-				'title'       => 'Analytics &amp; CRO',
+				'title'       => 'Analytics & CRO',
 				'description' => 'We instrument your funnel, surface the right data, and run structured experiments to improve conversion at every step.',
 				'link'        => '/services/analytics',
 			],
@@ -87,9 +87,9 @@
 				<!-- Number + accent bar -->
 				<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|4","margin":{"bottom":"var:preset|spacing|6"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 				<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--6)">
-					<!-- wp:separator {"backgroundColor":"accent","style":{"layout":{"selfStretch":"fixed","flexSize":"2rem"},"spacing":{"margin":{"top":"0","bottom":"0"}}},"className":"is-style-wide"} -->
-					<hr class="wp-block-separator has-text-color has-accent-color has-accent-background-color has-background is-style-wide" style="margin-top:0;margin-bottom:0"/>
-					<!-- /wp:separator -->
+					<!-- wp:html -->
+					<div aria-hidden="true" style="width:2rem;height:2px;background-color:var(--wp--preset--color--accent);flex-shrink:0"></div>
+					<!-- /wp:html -->
 					<!-- wp:paragraph {"style":{"typography":{"fontWeight":"300","letterSpacing":"-0.01em","fontSize":"var:preset|font-size|xs"},"spacing":{"margin":{"top":"0","bottom":"0"}},"color":{"text":"var:preset|color|contrast-3"}}} -->
 					<p class="has-contrast-3-color has-text-color" style="margin-top:0;margin-bottom:0;font-size:var(--wp--preset--font-size--xs);font-weight:300;letter-spacing:-0.01em"><?php echo esc_html( $service['number'] ); ?></p>
 					<!-- /wp:paragraph -->
@@ -97,11 +97,11 @@
 				<!-- /wp:group -->
 
 				<!-- wp:heading {"level":3,"fontSize":"xl","style":{"typography":{"lineHeight":"1.3","fontWeight":"500"},"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|4"}}}} -->
-				<h3 class="wp-block-heading has-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--4);line-height:1.3;font-weight:500"><?php echo $service['title']; ?></h3>
+				<h3 class="wp-block-heading has-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--4);line-height:1.3;font-weight:500"><?php echo esc_html( $service['title'] ); ?></h3>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"textColor":"contrast-3","fontSize":"sm","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|6"}},"typography":{"lineHeight":"1.65"}}} -->
-				<p class="has-contrast-3-color has-text-color has-sm-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--6);line-height:1.65"><?php echo $service['description']; ?></p>
+				<p class="has-contrast-3-color has-text-color has-sm-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--6);line-height:1.65"><?php echo esc_html( $service['description'] ); ?></p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:paragraph {"textColor":"accent","fontSize":"xs","style":{"typography":{"fontWeight":"600","letterSpacing":"0.06em","textTransform":"uppercase"},"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
