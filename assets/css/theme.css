@@ -54,15 +54,27 @@
 /* =============================================================================
    Site Header
    The .site-header class is added to the outermost Group block in header.html.
-   Sticky positioning is set via the block editor (position: sticky, top: 0px).
-   Here we add z-index and the progressive-enhancement frosted glass effect.
    ============================================================================= */
 
 .site-header {
+	position: sticky;
+	top: 0;
 	z-index: 100;
 	transition:
 		background-color var(--luka-transition),
 		box-shadow var(--luka-transition);
+}
+
+.header-actions {
+	gap: var(--wp--preset--spacing--3);
+}
+
+.site-footer > .wp-block-columns {
+	column-gap: var(--wp--preset--spacing--16);
+}
+
+.site-footer .wp-block-social-links {
+	gap: var(--wp--preset--spacing--4);
 }
 
 /*

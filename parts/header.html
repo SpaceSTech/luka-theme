@@ -9,7 +9,7 @@
      Site Editor can surface and edit it. z-index and backdrop-filter are in
      theme.css because the block editor cannot express them.
      backgroundColor="base" uses the semantic token so dark-mode works. -->
-<!-- wp:group {"className":"site-header","style":{"position":{"type":"sticky","top":"0px"},"border":{"bottom":{"color":"var:preset|color|border","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|4","right":"var:preset|spacing|6","bottom":"var:preset|spacing|4","left":"var:preset|spacing|6"}}},"backgroundColor":"base","layout":{"type":"constrained","wideSize":"1280px"}} -->
+<!-- wp:group {"className":"site-header","style":{"border":{"bottom":{"color":"var:preset|color|border","style":"solid","width":"1px"}},"spacing":{"padding":{"top":"var:preset|spacing|4","right":"var:preset|spacing|6","bottom":"var:preset|spacing|4","left":"var:preset|spacing|6"}}},"backgroundColor":"base","layout":{"type":"constrained","wideSize":"1280px"}} -->
 <div class="wp-block-group site-header has-base-background-color has-background" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-style:solid;border-bottom-width:1px;padding-top:var(--wp--preset--spacing--4);padding-right:var(--wp--preset--spacing--6);padding-bottom:var(--wp--preset--spacing--4);padding-left:var(--wp--preset--spacing--6)">
 
 	<!-- Inner row: logo | nav | actions — flex, no-wrap, space-between -->
@@ -40,7 +40,7 @@
 
 		<!-- Action group: search icon + CTA button.
 		     Hidden on mobile (≤782 px) via theme.css — the nav overlay takes over. -->
-		<!-- wp:group {"className":"header-actions","style":{"spacing":{"blockGap":"var:preset|spacing|3"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"right"}} -->
+		<!-- wp:group {"className":"header-actions","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"right"}} -->
 		<div class="wp-block-group header-actions">
 
 			<!-- Search block.
