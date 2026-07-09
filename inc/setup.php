@@ -55,8 +55,14 @@ function setup(): void {
 }
 
 /**
- * Front-end stylesheet — handles anything theme.json cannot express
- * (skip links, z-index, backdrop-filter, transition states, hover effects).
+ * Front-end stylesheets.
+ *
+ * theme.css handles anything theme.json cannot express:
+ * skip links, z-index, backdrop-filter, transitions, hover effects.
+ *
+ * woocommerce.css is loaded only on WooCommerce pages (shop, cart,
+ * checkout, account) — shipping it on every non-shop page wastes
+ * bandwidth and inflates the Lighthouse "unused CSS" audit.
  */
 function enqueue_assets(): void {
 	wp_enqueue_style(
@@ -65,6 +71,18 @@ function enqueue_assets(): void {
 		[],
 		LUKA_AGENCY_VERSION
 	);
+
+	if (
+		class_exists( 'WooCommerce' ) &&
+		( is_woocommerce() || is_cart() || is_checkout() || is_account_page() )
+	) {
+		wp_enqueue_style(
+			'luka-agency-woocommerce',
+			LUKA_AGENCY_URI . '/assets/css/woocommerce.css',
+			[ 'luka-agency-theme' ],
+			LUKA_AGENCY_VERSION
+		);
+	}
 }
 
 /**

@@ -1,0 +1,86 @@
+/*
+ * Luka Agency — WooCommerce brand integration
+ * Loaded only on WooCommerce pages (shop, cart, checkout, account).
+ * Enqueued conditionally in inc/setup.php.
+ *
+ * All values reference theme.json tokens via var(--wp--preset--*)
+ * so style variations (Dark, Warm, High Contrast) work automatically.
+ */
+
+/* =============================================================================
+   Buttons
+   ============================================================================= */
+
+.wc-block-components-button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+	background-color: var(--wp--preset--color--primary) !important;
+	border-radius: 0 !important;
+	color: var(--wp--preset--color--white) !important;
+	font-family: var(--wp--preset--font-family--sans) !important;
+	font-size: var(--wp--preset--font-size--xs) !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.08em !important;
+	text-transform: uppercase !important;
+	transition: background-color var(--luka-transition) !important;
+}
+
+.wc-block-components-button:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover {
+	background-color: var(--wp--preset--color--accent) !important;
+}
+
+/* =============================================================================
+   Price
+   ============================================================================= */
+
+.woocommerce .price,
+.wc-block-components-product-price {
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--serif);
+	font-weight: 300;
+}
+
+/* =============================================================================
+   Sale badge
+   ============================================================================= */
+
+.woocommerce span.onsale {
+	background-color: var(--wp--preset--color--accent);
+	border-radius: 0;
+	font-family: var(--wp--preset--font-family--sans);
+	font-size: var(--wp--preset--font-size--xs);
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	min-height: unset;
+	min-width: unset;
+	padding: 0.25rem 0.5rem;
+	text-transform: uppercase;
+}
+
+/* =============================================================================
+   Form fields
+   ============================================================================= */
+
+.wc-block-components-text-input input,
+.woocommerce .input-text,
+.woocommerce input[type="text"],
+.woocommerce input[type="email"],
+.woocommerce input[type="tel"],
+.woocommerce select {
+	border: 1px solid var(--wp--preset--color--border) !important;
+	border-radius: 0 !important;
+	font-family: var(--wp--preset--font-family--sans) !important;
+	font-size: var(--wp--preset--font-size--sm) !important;
+}
+
+.wc-block-components-text-input input:focus,
+.woocommerce .input-text:focus {
+	border-color: var(--wp--preset--color--primary) !important;
+	box-shadow: none !important;
+	outline: 2px solid var(--wp--preset--color--accent) !important;
+	outline-offset: 2px !important;
+}
